@@ -1,6 +1,6 @@
 'use strict';
 
-//enter items they need to purchase by entering text and hitting "Return" or clicking the "Add item" button.
+//enter items they need to purchase by entering text and hitting "Return" or clicking the "Add item" button.asdfasdfasdf
 
 /*
 * #js-shopping-list-form - form
@@ -41,14 +41,25 @@ function inputTest() {
   });
 }
 
+function checkItem() {
+  $('.shopping-item-toggle').on('click', function(event){
+    $(event.currentTarget).closest('div').siblings('.shopping-item').toggleClass('shopping-item__checked');
+  });
+}
+
+function deleteItem() {
+}
+
+
 let item = $('#shopping-list-entry').val();
 
 console.log('this code is running!!');
 
 $(()=>{
     inputTest();
-    //checkbutton
-    //deletebutton
+    checkItem();
+    deleteItem();
+    $('.container').addClass('fake_class');
 });
 
 //List function
