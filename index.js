@@ -1,0 +1,54 @@
+'use strict';
+
+//enter items they need to purchase by entering text and hitting "Return" or clicking the "Add item" button.
+
+/*
+* #js-shopping-list-form - form
+* #shopping-list-entry - input
+*
+* .shopping-list - container for...
+* .shopping-items, the items.
+*/
+
+//Input function
+
+/**
+ * @param {newItem}
+ * @returns {'string'}
+*/
+function inputTest() {
+    console.log('input test is running');
+  $('#js-shopping-list-form').submit( function(event){
+    event.preventDefault();
+    let item = $('#shopping-list-entry').val();
+    console.log(item);
+    if (typeof item === 'string'){
+        //new string with html
+        $('.shopping-list').append(`
+        <li>
+            <span class="shopping-item">${item}</span>
+            <div class="shopping-item-controls">
+            <button class="shopping-item-toggle">
+                <span class="button-label">check</span>
+            </button>
+            <button class="shopping-item-delete">
+                <span class="button-label">delete</span>
+            </button>
+            </div>
+        </li>
+        `);
+    }
+  });
+}
+
+let item = $('#shopping-list-entry').val();
+
+console.log('this code is running!!');
+
+$(()=>{
+    inputTest();
+    //checkbutton
+    //deletebutton
+});
+
+//List function
