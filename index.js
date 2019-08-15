@@ -48,6 +48,9 @@ function checkItem() {
 }
 
 function deleteItem() {
+  $('.shopping-item-delete').on('click', function(event){
+    $(event.currentTarget).closest('li').remove();
+  });
 }
 
 
@@ -59,7 +62,6 @@ $(()=>{
     inputTest();
     checkItem();
     deleteItem();
-    $('.container').addClass('fake_class');
 });
 
 //List function
